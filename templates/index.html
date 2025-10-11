@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prescription Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prescription Recognition</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction Result</h2>
+            <p><strong>Medicine:</strong> {{ prediction.medicine }}</p>
+            <p><strong>Generic:</strong> {{ prediction.generic }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
