@@ -86,5 +86,3 @@ This phase is handled by `app.py` and `utils/inference.py`.
 2.  **Application Deployment:** The Flask application (`app.py`) serves as the user-facing interface. When a user uploads a prescription image via the web browser, `app.py` saves it and then passes it to the `utils/inference.py` module. This module loads the pre-trained model and mappings (created in the Model Development phase) to perform the actual recognition. The predicted medicine and generic names are then sent back to `app.py`, which renders them on the `index.html` page for the user to see.
 
 This two-phase approach clearly separates the machine learning pipeline from the web application, allowing for modular development and easier maintenance.
-
-_completion>
